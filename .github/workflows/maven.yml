@@ -26,5 +26,5 @@ jobs:
       - name: Deploy package
 
         run: mvn $MAVEN_CLI_OPTS deploy -DskipTests
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -9,6 +9,19 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <organization>
+        <name>fitnezz.io</name>
+        <url>https://fitnezzio.com</url>
+    </organization>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub fitnezz.io Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/fitnezzio/HelperQueryDSL</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -63,6 +76,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
+                <configuration>
+                    <tag>${releaseVersion}</tag>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                </configuration>
             </plugin>
         </plugins>
     </build>
